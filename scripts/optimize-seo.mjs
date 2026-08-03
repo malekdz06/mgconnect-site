@@ -229,6 +229,11 @@ function headFor(page, existingHead) {
   <meta name="description" content="${htmlAttr(page.description)}" />
   <meta name="keywords" content="${htmlAttr(page.keywords)}" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets-web/favicon-48.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets-web/site-icon-192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
   <link rel="canonical" href="${canonical(page)}" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fr_CA" />

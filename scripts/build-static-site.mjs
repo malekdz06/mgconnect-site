@@ -44,6 +44,9 @@ const entries = [
   "styles.css",
   "sitemap.xml",
   "robots.txt",
+  "favicon.ico",
+  "apple-touch-icon.png",
+  "site.webmanifest",
   "assets-web",
   "assets"
 ];
