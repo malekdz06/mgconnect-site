@@ -44,7 +44,7 @@ export default {
     }
 
     response = await fetchAsset(env, request, "/index.html");
-    if (response) return new Response(response.body, { status: 404, headers: response.headers });
+    if (response) return response;
 
     return new Response("Not found", { status: 404 });
   }

@@ -4,9 +4,11 @@ import path from "node:path";
 
 const root = process.cwd();
 const dist = path.join(root, "dist");
+const client = path.join(dist, "client");
 const server = path.join(dist, "server");
 
 await rm(dist, { recursive: true, force: true });
+await mkdir(client, { recursive: true });
 await mkdir(server, { recursive: true });
 
 const entries = [
@@ -47,7 +49,7 @@ const entries = [
 for (const entry of entries) {
   const source = path.join(root, entry);
   if (!existsSync(source)) continue;
-  await cp(source, path.join(dist, entry), { recursive: true });
+  await cp(source, path.join(client, entry), { recursive: true });
 }
 
 const worker = `const MIME_TYPES = {
@@ -96,7 +98,7 @@ export default {
     }
 
     response = await fetchAsset(env, request, "/index.html");
-    if (response) return new Response(response.body, { status: 404, headers: response.headers });
+    if (response) return response;
 
     return new Response("Not found", { status: 404 });
   }
