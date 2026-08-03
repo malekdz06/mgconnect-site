@@ -1,4 +1,4 @@
-﻿import { cp, mkdir, rm, writeFile } from "node:fs/promises";
+import { cp, mkdir, rm, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
 
@@ -42,6 +42,8 @@ const entries = [
   "produits.html",
   "script.js",
   "styles.css",
+  "sitemap.xml",
+  "robots.txt",
   "assets-web",
   "assets"
 ];
@@ -106,3 +108,4 @@ export default {
 `;
 
 await writeFile(path.join(server, "index.js"), worker, "utf8");
+
